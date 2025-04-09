@@ -9,6 +9,5 @@ wheels/
 # Virtual environments
 .venv
 
+# MongoDB local setup
 data/
-
-migrated/

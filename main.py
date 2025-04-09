@@ -262,21 +262,18 @@ def main():
                         and parsed_dep["artifact_id"]
                     ):
                         verification = verify_maven_dependency(parsed_dep)
-                        status = "ERROR"
                         details = verification["error"] or ""
                         if verification["exists"]:
-                            status = "OK"
                             details = f"Latest: {verification['latest_version']}"
                             if verification["requested_version"]:
                                 details += (
                                     f" (Requested: {verification['requested_version']})"
                                 )
                         elif not verification["error"]:
-                            status = "NOT FOUND"
+                            logger.info(
+                                f"Dependency '{parsed_dep['group_id']}:{parsed_dep['artifact_id']}' not found."
+                            )
 
-                        logger.info(
-                            f"- Suggestion: {parsed_dep['group_id']}:{parsed_dep['artifact_id']}:{parsed_dep['requested_version'] or 'Any'} -> Verification: {status} {details}"
-                        )
                     else:
                         logger.warning(
                             f"Could not parse suggestion snippet: {snippet[:100]}..."

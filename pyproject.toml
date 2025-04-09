@@ -6,11 +6,12 @@ dependencies = [
     "dnspython>=2.7.0",
     "google-generativeai>=0.8.4",
     "javalang>=0.13.0",
+    "requests>=2.32.3",
+    # for mtools/mlaunch
     "mtools>=1.7.2",
     "packaging>=24.2",
     "psutil>=7.0.0",
     "pymongo>=4.11.3",
     "python-dateutil>=2.9.0.post0",
-    "requests>=2.32.3",
     "six>=1.17.0",
 ]

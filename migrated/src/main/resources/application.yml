@@ -1,0 +1,12 @@
+\
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: migrated_db
+      # If your MongoDB requires authentication, uncomment and set the following properties:
+      # username: <your-username>
+      # password: <your-password>
+      # Alternatively, you can use the URI format (ensure username/password are properly URL-encoded if they contain special characters):
+      # uri: mongodb://<your-username>:<your-password>@localhost:27017/migrated_db
